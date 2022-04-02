@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Anybody&display=swap');
+body{
+    width: auto;
+}
 
 #ola{
     background: url("https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat;
@@ -13,7 +15,7 @@ h1{
     font-family:Cambria;
 }
 #text{
-    padding: 50vh 0vh 0vh 0vh;
+    padding: 45vh 0vh 0vh 0vh;
     color: white;
 }
 h3{
@@ -21,8 +23,27 @@ h3{
     font-weight: bold;
     font-size: x-large;
 }
-#navbar{
 
+h2{
+    color: #2cb7f6;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-align: center;
+}
+#navTitle {
+    font-weight: bold;
+    font-size: 20px;
+}
+#navbar a{
+    font-size: 18px;
+    margin-left: 8px;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+}
+#navbar a:hover{
+    color: #2cb7f6;
+    transition: 1s;
 }
 .containers{
     position: relative;
@@ -34,11 +55,11 @@ h3{
 #sobreImg{
     background: url("https://images.unsplash.com/photo-1582133925315-694371d92da2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat;
     background-size: cover;
+    background-position-x: center;
 }
 #sobreMim{
     text-align: center;
     margin: 15px;
-    color: #2cb7f6;
     border-style: solid;
     border-top: 0;
     border-left:0 ;
@@ -55,16 +76,9 @@ h3{
     background: #2b2e30;
     text-align: center;
 }
-#tecnologias h3{
+#tecnologias h2{
     margin-bottom: 15px;
-    text-align: center;
-    margin: 15px;
-    color: #2cb7f6;
-    border-style: solid;
-    border-top: 0;
-    border-left:0 ;
-    border-right:0 ;
-    border-color: white;
+    margin: 15px;  
 }
 #tecnologiasLogos{
     padding: 10%;
@@ -90,4 +104,23 @@ h3{
 }
 .icons{
     width: 30px;
+}
+
+/* -- Mobile --*/
+
+@media (max-width: 600px){
+    #lstContato{
+        display: grid;
+    }
+    h1{
+        font-size: 7vh;
+
+    }
+    h3{letter-spacing: 3px;}
+    #sobreImg{display: none;}
+    #sobreTxt p{
+        font-size: 13px;
+    }
+
+    #contato{height: fit-content}
 }
