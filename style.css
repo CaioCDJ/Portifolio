@@ -109,6 +109,9 @@ h2{
 /* -- Mobile --*/
 
 @media (max-width: 600px){
+    h1 span{
+        font-size: 75px;
+    }
     #lstContato{
         display: grid;
     }
