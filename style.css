@@ -113,8 +113,7 @@ h2{
     width: 30px;
 }
 
-/* -- Mobile --*/
-
+/* Mobile - Vertical */
 @media (max-width: 600px){
     h1 span{
         font-size: 75px;
@@ -127,17 +126,27 @@ h2{
     }
     h3{letter-spacing: 3px;}
     #sobre{
-        height: 120vh;
+        height: auto;
     }
     #sobreImg{display: none;}
     #sobreTxt p{
         font-size: 13px;
     }
     #tecnologias{
-        height: 80vh;
+        height: auto;
     }
     #tecnologias img{
-        height: 14vh;
+        height: 9vh;
     }
     #contato{height: fit-content}
+}
+
+/* Mobile - Horizontal */
+@media (max-width: 900px){
+
+    .containers{height: auto;}
+    #sobreTxt{margin-top: 20px;}
+    #contato{
+        height: auto;
+    }
 }
