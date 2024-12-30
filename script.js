@@ -1,1 +1,0 @@
-window.home = new Controller();
