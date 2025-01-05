@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .center{
   @apply items-center justify-center
+}
+
+.p-galleria-content,
+.p-galleria-items-container,
+.p-galleria-items,
+.p-galleria-item >img {
+  height: 100%;
+  width: 100%;
 }
 

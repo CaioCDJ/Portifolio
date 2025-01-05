@@ -1,27 +1,16 @@
 <script setup>
-import Button from "primevue/button";
-import Hero from "./components/sections/Hero.vue";
-import About from "./components/sections/About.vue";
-import Projects from './components/sections/Projects.vue'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <!-- TODO:
-    - Navbar
-    - Hero
-    - About me
-    - Stack / db / langs / tools
-    - Timeline  work/formation
-    - Projects
-    - Contats 
-  -->
+  <div class="flex flex-col w-full center gap-8 text-white">
+    <nav class="w-full p-2 flex flex-row justify-between items-center px-4">
+      <div>
+        <RouterLink to="/">Portifolio</RouterLink>
+      </div>
+      <RouterLink to="/projects">Projects</RouterLink>
+    </nav>
 
-  <main class="flex flex-col w-full center gap-8 bg-slate-900 text-white">
-    <Hero />
-    <About />
-    <Projects />
-  </main>
+    <RouterView />
+  </div>
 </template>
-
-
-

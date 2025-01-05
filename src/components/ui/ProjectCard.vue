@@ -1,81 +1,83 @@
-<script setup>
-import { ref } from "vue";
-import Galleria from "primevue/galleria";
-import Button from "primevue/button";
-
-const { images, name, odd } = defineProps({
-  images: Array,
-  name: String,
-  odd: Boolean,
-});
-
-const responsiveOptions = ref([
-  {
-    breakpoint: "991px",
-    numVisible: 4,
-  },
-  {
-    breakpoint: "767px",
-    numVisible: 3,
-  },
-  {
-    breakpoint: "575px",
-    numVisible: 1,
-  },
-]);
-</script>
-
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="w-full flex center" :class="odd ? 'md:order-1' : 'md:order-last'">
-      <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5" :circular="true"
-        containerStyle="width: 640px" :showItemNavigators="true" :showThumbnails="false">
-        <template #item="slotProps">
-          <img :src="slotProps.item" :alt="slotProps.item" style="width: 100%; display: block" />
-        </template>
-        <template #thumbnail="slotProps">
-          <img :src="slotProps" :alt="slotProps" style="display: block" />
-        </template>
-      </Galleria>
+  <div
+    class="bg-slate-600/30 backdrop-blur-xl hover:shadow hover:shadow-md grid grid-cols-1 md:grid-cols-2 rounded-lg h-auto md:h-[250px]"
+  >
+    <div class="flex">
+      <div class="card">
+        <Galleria
+          :value="imgs"
+          :responsiveOptions="responsiveOptions"
+          :numVisible="5"
+          :circular="true"
+          containerStyle="max-width: 100%;height:100%; max-height:250px"
+          :showItemNavigators="true"
+          :showThumbnails="false"
+        >
+          <template #item="slotProps">
+            <img
+              :src="slotProps.item"
+              :alt="slotProps.item"
+              style="width: 100%; display: block"
+            />
+          </template>
+          <template #thumbnail="slotProps">
+            <img
+              :src="slotProps.item"
+              :alt="slotProps.item"
+              style="display: block"
+            />
+          </template>
+        </Galleria>
+      </div>
     </div>
 
-    <div :class="odd ? 'md:order-last' : 'md:order-1'" class="flex flex-col gap-4">
-      <div class="flex flex-col gap-4">
-        <h4 class="text-2xl font-semibold">{{ name }}</h4>
-        <div class="flex flex-row flex-wrap w-full gap-2">
-          <!-- <Badge name="avalonia"  /> -->
-          <!-- <Badge name="csharp"  /> -->
-
-          <svg class="w-10" viewBox="0 0 128 128">
-            <path fill="#9B4F96"
-              d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z">
-            </path>
-            <path fill="#68217A"
-              d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z">
-            </path>
-            <path fill="#fff"
-              d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6zM97 66.2l.9-4.3h-4.2v-4.7h5.1L100 51h4.9l-1.2 6.1h3.8l1.2-6.1h4.8l-1.2 6.1h2.4v4.7h-3.3l-.9 4.3h4.2v4.7h-5.1l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6h-2.4v-4.7H97zm4.8 0h3.8l.9-4.3h-3.8l-.9 4.3z">
-            </path>
-          </svg>
-
+    <div class="flex flex-col p-2 px-4 gap-2 center ">
+      <div clas="flex flex-col gap-4">
+        <h5 class="text-xl text-sky-300 font-semibold">{{ title }}</h5>
+        <div class="text-justify indent-2 text-sm">
+          {{ desc }}
+        </div>
+        <div class="flex flex-row flex-wrap mt-2 gap-2">
+          <Icon v-for="icon in stack" :name="icon" />
         </div>
       </div>
-      <div class="text-jusitfy">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non minus
-        velit necessitatibus nemo laudantium est ducimus quae quas nesciunt
-        officiis architecto distinctio, cum similique eveniet molestiae. Id et
-        mollitia nesciunt! Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Non minus velit necessitatibus nemo laudantium est ducimus quae
-        quas nesciunt officiis architecto distinctio, cum similique eveniet
-        molestiae. Id et mollitia nesciunt! Lorem ipsum dolor, sit amet
-        consectetur adipisicing elit. Non minus velit necessitatibus nemo
-        laudantium est ducimus quae quas nesciunt officiis architecto
-        distinctio, cum similique eveniet molestiae. Id et mollitia nesciunt!
-      </div>
       <div>
-        <Button class="!bg-black !border-none" as="a" label="Repositorio" href="https://github.com/CaioCDJ/CardCreator"
-          target="_blank" icon="pi pi-github" />
+        <Button
+          class="!bg-black !border-none"
+          as="a"
+          label="Repositorio"
+          :href="repo_url"
+          target="_blank"
+          icon="pi pi-github"
+        />
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import Button from "primevue/button";
+import Galleria from "primevue/galleria";
+import Icon from "./Icon.vue";
+import { ref } from "vue";
+
+const { title, desc, imgs, repo_url, stack, preview_url } = defineProps({
+  title: String,
+  desc: String,
+  imgs: Array,
+  repo_url: String,
+  preview_url: String,
+  stack: Array,
+});
+
+const responsiveOptions = ref([
+  {
+    breakpoint: "400px",
+    numVisible: 4,
+  },
+  {
+    breakpoint: "400px",
+    numVisible: 1,
+  },
+]);
+</script>

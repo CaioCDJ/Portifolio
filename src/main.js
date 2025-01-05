@@ -4,6 +4,9 @@ import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import Aura from '@primevue/themes/aura'
 import 'primeicons/primeicons.css'
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
+import router from './Router'
+import Tooltip from 'primevue/tooltip';
 
 console.log(`
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠴⠒⠒⠲⠤⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -31,5 +34,8 @@ createApp(App)
       preset: Aura
     }
   })
+  .use(autoAnimatePlugin)
+  .use(router)
+  .directive('tooltip', Tooltip)
   .mount('#app')
 
