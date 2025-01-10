@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-slate-600/30 backdrop-blur-xl hover:shadow hover:shadow-md grid grid-cols-1 md:grid-cols-2 rounded-lg h-auto md:h-[250px]"
+    class="bg-gradient-to-r from-cyan-900/90 to-slate-900/40 backdrop-blur-xl hover:shadow hover:shadow-md grid grid-cols-1 md:grid-cols-2 rounded-lg h-auto md:h-[250px]"
   >
     <div class="flex">
       <div class="card">

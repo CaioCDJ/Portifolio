@@ -13,6 +13,7 @@
 //   - Card Maker
 //   - Ellegance
 //   - Biblioteca
+//   - Portifolio
 
 export default [
   {
@@ -55,6 +56,6 @@ export default [
     ],
     repo_url: "https://github.com/CaioCDJ",
     preview_url: "",
-    stack: ["fsharp", "avalonia"],
+    stack: ["fsharp", "ts"],
   },
 ];
