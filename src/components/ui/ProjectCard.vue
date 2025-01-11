@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gradient-to-r from-cyan-900/90 to-slate-900/40 backdrop-blur-xl hover:shadow hover:shadow-md grid grid-cols-1 md:grid-cols-2 rounded-lg h-auto md:h-[250px]"
+    class="bg-[#050032]/80 border border-2 border-sky-500/30 backdrop-blur-xl hover:shadow hover:shadow-md grid grid-cols-1 md:grid-cols-2 rounded-lg h-auto md:h-[250px]"
   >
     <div class="flex">
       <div class="card">
@@ -9,7 +9,7 @@
           :responsiveOptions="responsiveOptions"
           :numVisible="5"
           :circular="true"
-          containerStyle="max-width: 100%;height:100%; max-height:250px"
+          containerStyle="max-width: 100%;height:100%; max-height:250px; border:none"
           :showItemNavigators="true"
           :showThumbnails="false"
         >
@@ -33,7 +33,7 @@
 
     <div class="flex flex-col p-2 px-4 gap-2 center ">
       <div clas="flex flex-col gap-4">
-        <h5 class="text-xl text-sky-300 font-semibold">{{ title }}</h5>
+        <h5 class="text-xl text-sky-500 font-semibold">{{ title }}</h5>
         <div class="text-justify indent-2 text-sm">
           {{ desc }}
         </div>

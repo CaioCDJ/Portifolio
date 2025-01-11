@@ -1,16 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer tailwind-base, primevue, tailwind-utilities;
 
-.center{
-  @apply items-center justify-center
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+.center {
+  @apply items-center justify-center;
+}
+
+.main-title {
+  @apply neon-text text-5xl md:text-6xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-green-400 to-cyan-500;
+}
+
+.title{
+  @apply font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-sky-500 to-sky-500 text-3xl lg:text-5xl
+}
+
+.neon-text {
+  text-shadow:
+    0 0 5px rgba(10, 97, 170, 0.0),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(0, 100, 255, 0.6);
 }
 
 .p-galleria-content,
 .p-galleria-items-container,
 .p-galleria-items,
-.p-galleria-item >img {
+.p-galleria-item>img {
   height: 100%;
   width: 100%;
 }
-

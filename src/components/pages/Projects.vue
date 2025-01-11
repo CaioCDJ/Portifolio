@@ -4,9 +4,9 @@
       <section class="flex flex-col w-full">
         <!-- <div class="h-[50vh]"></div> -->
         <div class="flex flex-col center gap-4">
-          <h1 class="text-3xl text-sky-500 font-bold">Projetos</h1>
+          <h1 class="title">Projetos</h1>
           <div
-            class="text-gray-200 font-lg text-center w-full md:w-3/4 indent-4 [text-shadow:_0_4px_8px_rgba(30_30_30_/_0.5)]"
+        class="text-center w-full [text-shadow:_0_4px_8px_rgba(30_30_30_/_0.5)] leading-snug font-semibold max-w-lg text-lg text-gray-100"
           >
             Aqui estão alguns dos projetos interesantes, os quais eu desenvolvi
             ou ainda estou desenvolvendo. A maioria deles foram idealizados no
@@ -19,7 +19,7 @@
       <!-- Listagem de projetos -->
 
       <section class="flex flex-col gap-4 w-full">
-        <div class="card flex flex-wrap justify-center gap-4">
+        <div class="card grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 justify-center gap-4">
           <div class="flex items-center gap-3" v-for="item in boxes_tech">
             <Checkbox
               @change="on_change_boxes()"
@@ -67,22 +67,28 @@ import ProjectCard from "../ui/ProjectCard.vue";
 import project_data from "../../data/projects.js";
 import { ref, onMounted } from "vue";
 
+const checked_boxes = ref([]);
+const boxes_tech = ref([]);
+const projects = ref();
+
 onMounted(() => {
   projects.value = project_data;
+  // Checkboxes based on the tech 
+  // found in the projects data
+  for (let index = 0; index < projects.value.length; index++) {
+    const stack = projects.value[index].stack;
+    for (let i = 0; i < stack.length; i++) {
+      const tech = stack[i];
+      if (i == 0 && index == 0) {
+        boxes_tech.value.push(tech);
+      } else {
+        if (!boxes_tech.value.includes(tech)) {
+          boxes_tech.value.push(tech);
+        }
+      }
+    }
+  }
 });
-
-const checked_boxes = ref([]);
-const boxes_tech = [
-  "csharp",
-  "tailwind",
-  "ts",
-  "js",
-  "react",
-  "vue",
-  "express",
-];
-
-const projects = ref();
 
 const on_change_boxes = () => {
   if (checked_boxes.value.length > 0) {
