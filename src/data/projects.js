@@ -24,6 +24,7 @@ export default [
       "https://images.unsplash.com/photo-1676046110191-e4a6873a5d0b?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNTc3NDY2OXw&ixlib=rb-4.0.3&q=85&w=1920",
     ],
     repo_url: "https://github.com/CaioCDJ",
+    is_done: false,
     preview_url: "",
     stack: ["vue", "csharp"],
   },
@@ -33,6 +34,7 @@ export default [
     imgs: [
       "https://github.com/CaioCDJ/GenericCourses/raw/main/assets/homePage.png",
     ],
+    is_done: true,
     repo_url: "https://github.com/CaioCDJ",
     preview_url: "",
     stack: ["csharp", "postgres", "tailwind"],
@@ -43,6 +45,7 @@ export default [
     imgs: [
       "https://images.unsplash.com/photo-1620753980635-468d8a5d4b97?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNjEwNTE1NHw&ixlib=rb-4.0.3&q=85&w=1920",
     ],
+    is_done: true,
     repo_url: "https://github.com/caiocdj",
     preview_url: "",
     stack: ["ts", "mysql", "express"],
@@ -54,6 +57,7 @@ export default [
       "https://images.unsplash.com/photo-1485356824219-4bc17c2a2ea7?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNjA5MjczMXw&ixlib=rb-4.0.3&q=85&w=1920",
       "https://images.unsplash.com/photo-1643379840002-574002fbbd0a?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNjEwNTE1NHw&ixlib=rb-4.0.3&q=85&w=1920",
     ],
+    is_done: true,
     repo_url: "https://github.com/CaioCDJ",
     preview_url: "",
     stack: ["fsharp", "ts"],
@@ -65,8 +69,9 @@ export default [
       "https://images.unsplash.com/photo-1485356824219-4bc17c2a2ea7?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNjA5MjczMXw&ixlib=rb-4.0.3&q=85&w=1920",
       "https://images.unsplash.com/photo-1643379840002-574002fbbd0a?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNjEwNTE1NHw&ixlib=rb-4.0.3&q=85&w=1920",
     ],
+    is_done: false,
     repo_url: "https://github.com/CaioCDJ",
     preview_url: "",
-    stack: ["js", "react","tailwind","postgres"],
+    stack: ["js", "react", "tailwind", "postgres"],
   },
 ];

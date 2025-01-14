@@ -33,7 +33,7 @@
             >
               <div class="flex flex-row gap-2 items-center justify-between">
                 <div class="flex center gap-2">
-                  <Avatar class="!w-16 !h-16" :src="item.logo" shape="circle" />
+                  <Avatar class="!w-16 !h-16" :image="item.logo" shape="circle" />
                   <div class="flex flex-col">
                     <span
                       class="font-bold text-sky-400 text-2xl"

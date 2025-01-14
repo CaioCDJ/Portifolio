@@ -31,9 +31,19 @@
       </div>
     </div>
 
-    <div class="flex flex-col p-2 px-4 gap-2 center ">
+    <div class="flex flex-col p-2 px-4 gap-2 center">
       <div clas="flex flex-col gap-4">
-        <h5 class="text-xl text-sky-500 font-semibold">{{ title }}</h5>
+        <div class="flex justify-between w-full">
+          <h5 class="text-xl text-sky-500 font-semibold">
+            {{ title }}
+          </h5>
+          <Tag
+            v-if="!is_done"
+            class="!text-[10px] text-emerald-200 !bg-green-500/25 !px-2 !py-0"
+            severity="success"
+            value="Doing"
+          />
+        </div>
         <div class="text-justify indent-2 text-sm">
           {{ desc }}
         </div>
@@ -59,6 +69,7 @@
 import Button from "primevue/button";
 import Galleria from "primevue/galleria";
 import Icon from "./Icon.vue";
+import Tag from "primevue/tag";
 import { ref } from "vue";
 
 const { title, desc, imgs, repo_url, stack, preview_url } = defineProps({
@@ -68,6 +79,7 @@ const { title, desc, imgs, repo_url, stack, preview_url } = defineProps({
   repo_url: String,
   preview_url: String,
   stack: Array,
+  is_done: Boolean,
 });
 
 const responsiveOptions = ref([
